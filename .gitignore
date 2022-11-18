@@ -1,2 +1,5 @@
 /backend/src/__pycache__
 /.vscode
+/stock db.session.sql
+/.DS_Store
+/.idea
