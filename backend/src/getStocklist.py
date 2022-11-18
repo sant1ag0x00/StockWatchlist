@@ -8,7 +8,8 @@ def getStocklist(symbols: list):
         cur.execute(f"SELECT * FROM stocks WHERE Symbol = '{symbol}'")
         rows = cur.fetchall()
         stocklist.append(rows[0])
-    print(stocklist)
+    #print(stocklist)
+    return stocklist
     con.close()
         
 getStocklist(['NVDA','AAPL'])

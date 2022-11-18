@@ -17,12 +17,13 @@ def updateStock(stock_symbols: list):
     for symbol in stock_symbols:
         response = requests.request("POST", url, data=f"symbol={symbol}", headers=headers)
         response_dict = response.json()
+        print(response_dict)
         #response_string = json.dumps(response_json)
         curPrice = response_dict['data']['currentPrice']
         query = f"UPDATE stocks SET Price = {curPrice} WHERE Symbol = '{symbol}'"
-        print(query)
+        #print(query)
         print(con)
         cur.execute(query)
         #print(type(response_string))
     con.close()
-updateStock(['NVDA'])
+updateStock(['NVDA',"AAPL"])
