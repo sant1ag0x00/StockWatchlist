@@ -1,22 +1,26 @@
-from fastapi import FastAPI
-import uvicorn
+from updateStock import updateStock
+from getSymbols import getSymbols
+#from fastapi import FastAPI
+#import uvicorn
 import sqlite3
 
-con = sqlite3.connect("StockWatchlist.db")
-cur = con.cursor()
+#con = sqlite3.connect("../Stock.db")
+#cur = con.cursor()
 
-app = FastAPI()
+#app = FastAPI()
 
-@app.get("/")
+#@app.get("/")
 def read_root():
     return {"Schluessel": "Wert"}
 
-@app.get("/test")
-def test():
-  return {"test": "test"}
-  
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
-
-uvicorn.run(app,host="0.0.0.0",port="8080")
+#@app.get("/stocklist/{name}")
+def getStocks(name: str):
+    sym1 = getSymbols(name)
+    sym2 = []
+    for entry in sym1:
+        sym2.append(entry[0])
+    print(sym2)
+    updateStock(sym2)
+    return None
+getStocks('Robert')
+#uvicorn.run(app,host="0.0.0.0",port="8080")
