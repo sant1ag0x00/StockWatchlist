@@ -12,4 +12,4 @@ def getStocklist(symbols: list):
     return stocklist
     con.close()
         
-getStocklist(['NVDA','AAPL'])
+#getStocklist(['NVDA','AAPL'])

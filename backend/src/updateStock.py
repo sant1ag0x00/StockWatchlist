@@ -15,15 +15,13 @@ def updateStock(stock_symbols: list):
     con = sqlite3.connect("../stock.db")
     cur = con.cursor()
     for symbol in stock_symbols:
-        response = requests.request("POST", url, data=f"symbol={symbol}", headers=headers)
+        try:
+            response = requests.request("POST", url, data=f"symbol={symbol}", headers=headers)
+        except Exception:
+            return None
         response_dict = response.json()
-        print(response_dict)
-        #response_string = json.dumps(response_json)
         curPrice = response_dict['data']['currentPrice']
         query = f"UPDATE stocks SET Price = {curPrice} WHERE Symbol = '{symbol}'"
-        #print(query)
-        print(con)
         cur.execute(query)
-        #print(type(response_string))
+        con.commit()
     con.close()
-updateStock(['NVDA',"AAPL"])
