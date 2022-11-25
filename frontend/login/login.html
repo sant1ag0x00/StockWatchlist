@@ -3,26 +3,30 @@
 
     <head>
 
-        <title>StockWatchList</title>
-        <script src="login.js"></script>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome to the StockWatchList!</title>
         <link rel="stylesheet" href="../css/bootstrap.min.css">
         <link rel="stylesheet" href="login.css">
-        <link rel="icon" href="../assets/icon.ico">
+        <link rel="icon" href="../assets/login_icon.ico">
         
     </head>
     
     <body onload="resetCookie()">
 
-        <div class="row col-lg-6 col-lg-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
-
-            <h1>Welcome to the Stock-Watch-List!</h1>
-
-            <div class="input-group-lg">
-                <input class="form-control" type="text" id="name" placeholder="Your name...">
-                <button class="btn btn-success" onclick="writeCookie()">Start!</button>
+        <div class="row">
+            <div class="col-lg-3 col-sm-2 col-xs-1"></div>
+            <div class="col-lg-6 col-sm-8 col-xs-10"> 
+                <h1>Welcome to the Stock-Watch-List!</h1>
+                <div class="input-group-lg">
+                    <input class="form-control" type="text" placeholder="Your name..."> 
+                    <button class="btn btn-success" type="submit" onclick="writeCookie()">Start!</button>
+                </div>
             </div>
-
         </div>
+
+        <script src="login.js"></script>
 
     </body>
 

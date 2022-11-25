@@ -1,0 +1,88 @@
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+}
+
+.navbar {
+    padding: 0%;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    margin-right: 1rem;
+    padding: 0%;
+}
+
+.nav-item {
+    padding: 0.5rem;
+    transition: 200ms ease;
+    width: 15rem;
+    height: 5rem;
+    text-align: center;
+}
+
+.nav-link {
+    height: 5rem;
+    padding-top: 9%;
+}
+
+.nav-item:hover {
+    background-color: #bebebe;
+    font-weight: bold;
+}
+
+.navbar-brand {
+    margin-left: 1rem;
+    font-weight: 600;
+    font-size: xx-large;
+    transition: 200ms ease;
+}
+
+.card {
+    margin-top: 1rem;
+    transition: 200ms ease;
+}
+
+.card:hover {
+    background-image: url(../assets/stock_bg.jpg);
+    font-weight: bold;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.card-wrapper {
+    position: absolute;
+    margin: 5rem 1vw 0rem;
+    width: 98vw;
+}
+
+.navbar-toggler {
+    margin-right: auto;
+    translate: -525%;
+}
+
+@media only screen and (max-width: 991px) {
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        translate: 0% -50%;
+    }
+    
+    .navbar-brand {
+        margin-top: 0.5rem;
+        margin-left: 5rem;
+        padding-bottom: 1.2rem;
+    }
+}

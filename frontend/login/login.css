@@ -1,8 +1,8 @@
 body { 
-    background: url(../assets/bg.jpg) no-repeat center center fixed; 
+    background: url(../assets/login_bg.jpg) no-repeat center center fixed; 
     background-size: cover;
     overflow: hidden;
-    margin-top: 25%;
+    margin-top: 20%;
 }
 
 h1 {
@@ -20,4 +20,11 @@ h1 {
     width: 40%;
     height: 50px;
     margin: 2% 30% 2%;
+}
+
+@media only screen and (max-width: 575px) {
+    .form-control {
+        margin-left: 2vw;
+        width: 96vw;
+    }
 }
