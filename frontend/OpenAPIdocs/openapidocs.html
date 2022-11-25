@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swagger-ui-dist@4/swagger-ui.css">
+    <link rel="icon" href="../assets/icon.ico">
+    <title>FastAPI - Swagger UI</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Stockwatchlist</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="../homepage/homepage.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../login/login.html">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">OpenAPI-Documentation<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="swagger-ui">
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swagger-ui-dist@4/swagger-ui-bundle.js"></script>
+<!-- `SwaggerUIBundle` is now available on the page -->
+<script>
+    const ui = SwaggerUIBundle({
+        url: './openapi.json',
+        "dom_id": "#swagger-ui",
+        "layout": "BaseLayout",
+        "deepLinking": true,
+        "showExtensions": true,
+        "showCommonExtensions": true,
+        oauth2RedirectUrl: window.location.origin + '/docs/oauth2-redirect',
+        presets: [
+            SwaggerUIBundle.presets.apis,
+            SwaggerUIBundle.SwaggerUIStandalonePreset
+        ],
+    })
+</script>
+</body>
+</html>
