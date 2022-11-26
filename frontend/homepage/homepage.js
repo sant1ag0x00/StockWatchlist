@@ -11,7 +11,7 @@ function getStocklist() {
     if (parts.length === 2) {
         let name = parts.pop().split(';').shift();
     }
-
-    console.log(fetchData(`http://0.0.0.0:8080/${name}`));
-    return name;
+    data = fetchData(`http://0.0.0.0:8080/stocklist/${name}`);
+    //console.log(data)
+    return data;
 }

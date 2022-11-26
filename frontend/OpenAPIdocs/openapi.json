@@ -1,9 +1,6 @@
 {
   "openapi": "3.0.2",
-  "info": {
-    "title": "FastAPI",
-    "version": "0.1.0"
-  },
+  "info": { "title": "FastAPI", "version": "0.1.0" },
   "paths": {
     "/": {
       "get": {
@@ -12,25 +9,19 @@
         "responses": {
           "200": {
             "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            }
+            "content": { "application/json": { "schema": {} } }
           }
         }
       }
     },
-    "/{name}": {
+    "/stocklist/{name}": {
       "get": {
-        "summary": "Test",
-        "operationId": "test__name__get",
+        "summary": "Getstocks",
+        "operationId": "getStocks_stocklist__name__get",
         "parameters": [
           {
             "required": true,
-            "schema": {
-              "title": "Name"
-            },
+            "schema": { "title": "Name", "type": "string" },
             "name": "name",
             "in": "path"
           }
@@ -38,19 +29,25 @@
         "responses": {
           "200": {
             "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {}
+            "content": { "application/json": { "schema": {
+              "type":"object",{
+                "properties":{
+                  "name":{
+                    "type":"string"
+                  },
+                  "symbol":{
+                    "type":"string"
+                  }
+                }
               }
-            }
+              
+            } } }
           },
           "422": {
             "description": "Validation Error",
             "content": {
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
+                "schema": { "$ref": "#/components/schemas/HTTPValidationError" }
               }
             }
           }
@@ -67,43 +64,22 @@
           "detail": {
             "title": "Detail",
             "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ValidationError"
-            }
+            "items": { "$ref": "#/components/schemas/ValidationError" }
           }
         }
       },
       "ValidationError": {
         "title": "ValidationError",
-        "required": [
-          "loc",
-          "msg",
-          "type"
-        ],
+        "required": ["loc", "msg", "type"],
         "type": "object",
         "properties": {
           "loc": {
             "title": "Location",
             "type": "array",
-            "items": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
-            }
+            "items": { "anyOf": [{ "type": "string" }, { "type": "integer" }] }
           },
-          "msg": {
-            "title": "Message",
-            "type": "string"
-          },
-          "type": {
-            "title": "Error Type",
-            "type": "string"
-          }
+          "msg": { "title": "Message", "type": "string" },
+          "type": { "title": "Error Type", "type": "string" }
         }
       }
     }
