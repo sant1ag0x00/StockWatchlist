@@ -25,7 +25,6 @@ def getStocks(name: str):
     updateStock(sym)
     stocklist = getStocklist(sym)
     content = {'data': stock for stock in stocklist}
-    print(content)
     return content
 
 #getStocks("Robert")

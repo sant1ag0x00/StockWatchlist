@@ -14,12 +14,10 @@
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"></script>
 	<script src="homepage.js"></script>
-	<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-	<script defer src="https://pyscript.net/latest/pyscript.js"></script> 
 
 </head>
 
-<body onload="data = getStocklist();console.log(data);console.log(typeof(data)); console.log(Object.values(data));console.log(data.value);console.log(data[0]); console.log(JSON.stringify(data))">
+<body onload="data = getStocklist();data.then(value => {document.getElementById('first-card').innerHTML = value.data.name + '	' + value.data.symbol + '	' + value.data.sector + '	' + value.data.price + '$'});">
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="#">Stockwatchlist</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
@@ -40,16 +38,15 @@
 			</ul>
 		</div>
 	</nav>
-
+	<div id="myData">
+	</div>
 	<div class="card-wrapper">
 		<div class="card card-body" id="first-card">
-			<h5 class="card-title">Stock title with symbol</h5>
-			<p class="card-text">info such as price, etc.</p>
+			<h5 class="card-title">Loading...</h5>
 		</div>
 
-		<div class="card card-body">
-			<h5 class="card-title">Stock title #2 with symbol</h5>
-			<p class="card-text">these divs with class "card card-body" need to added for every stock</p>
+		<div class="card card-body" id="second-card">
+			<h5 class="card-title">Loading...</Login></h5>
 		</div>
 	</div>
 

@@ -15,3 +15,22 @@ function getStocklist() {
     //console.log(data)
     return data;
 }
+
+function appendData(data) {
+    var mainContainer = document.getElementById("myData");
+    for (var i = 0; i < data.length; i++) {
+      var div = document.createElement("div");
+      div.innerHTML = 'Name: ' + data[i].data.name;
+      mainContainer.appendChild(div);
+    }
+  }
+async function convertStocklist(){
+    data = getStocklist();
+	let responseArr = [];
+	await data.then(value => {responseArr.concat(Object.entries(value))});
+	console.log(responseArr);
+    return responseArr.then(value => {console.log(value)})
+}
+function Sleep(milliseconds) {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+}
