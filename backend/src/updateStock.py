@@ -7,7 +7,7 @@ url = "https://yahoo-finance97.p.rapidapi.com/stock-info"
 payload = "symbol=AAPL"
 headers = {
 	"content-type": "application/x-www-form-urlencoded",
-	"X-RapidAPI-Key": "4399c659eamsh707231ff75492ebp145200jsncbd340cea994",
+	"X-RapidAPI-Key": "",
 	"X-RapidAPI-Host": "yahoo-finance97.p.rapidapi.com"
 }
 
